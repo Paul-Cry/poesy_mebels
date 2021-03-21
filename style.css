@@ -128,10 +128,12 @@ nav {
 	align-items: center;
 }
 
-.nav_block :hover{
-	background-color: #000;
+.nav_block:hover{
+	background-color: #000 !important;
 	color: white;
-
+}
+.nav_block:hover a{
+	color: white;
 }
 
 .nav_block a{

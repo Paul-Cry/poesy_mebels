@@ -16,6 +16,7 @@
 
 body{
 	margin: 0;
+	padding: 0;
 }
 
 a{
@@ -366,6 +367,64 @@ nav{
 
 
 
+
+
+
+.screen_four{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	margin-left: 20.2%;
+	
+}
+
+.four_img{
+
+}
+
+.four_items{
+	margin-bottom: 20%;
+}
+
+.round{
+	position: relative;
+}
+
+.line_four
+.round{
+	position: relative;
+	right: 30%;
+	top: 90px;
+}
+
+.round_items{
+	margin-right: 40px;
+}
+.lineOne{
+	display: block;
+	position: absolute;
+	margin-left: 4.49%;
+}
+
+.linetwo{
+	display: block;
+	position: absolute;
+	margin-left: 8.6%;
+	margin-top: 5.4%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 1500px){
 	.main_title{
 		font-size: 3em;
@@ -377,4 +436,3 @@ nav{
 		font-size: 1.5em;
 	}
 }
-

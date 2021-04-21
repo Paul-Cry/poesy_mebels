@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var blockNav = document.querySelectorAll('.nav_block');
 var blockLink = document.querySelectorAll('.button_nav');
 

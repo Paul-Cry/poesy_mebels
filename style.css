@@ -12,7 +12,9 @@
 	font-family: 'Rubik-bold';
 	src: url(fonts/static/Rubik-Bold.ttf);
 }
-
+html {
+	scroll-behavior: smooth;
+}
 
 body{
 	margin: 0;
@@ -141,6 +143,7 @@ header{
 .btn_header{
 	background: #fff;
 	font-family: 'Rubik-medium';
+	transition: .5s all;
 }
 
 .btn_header:hover{
@@ -175,7 +178,7 @@ nav{
 
 .nav_positon{
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	scroll-behavior: smooth;
 }
 .nav_text {
@@ -194,6 +197,7 @@ nav{
 .nav_text:hover{
 	background: #000;
 	color: #fff;
+	transition: .6s all;
 }
 
 .screen_two {
@@ -423,8 +427,9 @@ nav{
 
 .screen_four{
 	width: 100%;
-	height: 900px;	
-
+	height: 1000px;
+	display: flex;
+	align-items: center;
 }
 
 
@@ -434,7 +439,6 @@ nav{
 	height: 625px;
 	display: flex;
 	margin:0 auto;
-	transform: translate(0, 127px);
 }
 
 .round{
@@ -493,7 +497,6 @@ nav{
 .sreen_five{
 	width: 100%;
 	height: 1144px;
-	margin-top: 22.76%;
 	background:#fffbed;
 	position: relative;
 }
@@ -515,7 +518,9 @@ nav{
 }
 
 .Oline, .Tline{
-	white-space: nowrap
+	white-space: nowrap;
+	display: flex;
+	justify-content: center;
 }
 .five_title{
 	text-align: center;

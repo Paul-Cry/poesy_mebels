@@ -1,4 +1,4 @@
-@font-face{
+в@font-face{
 	font-family: 'Rubik';
 	src: url(fonts/Rubik-Light.ttf);
 }
@@ -22,15 +22,6 @@ body{
 	font-family: 'Rubik';
 }
 
-.number{
-	position: fixed;
-	top: 0;
-	width: 100px;
-	height: 100px;
-	background-color: #fff;
-	color: #000;
-
-}
 
 a{
 	text-decoration: none;
@@ -52,6 +43,7 @@ header{
 .container {
 	width: 1170px;
 	margin: 0 auto;
+	transition: 2s all;
 }
 .headers_items{
 	display: flex;
@@ -189,7 +181,7 @@ nav{
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	width: 187px;
+	width: 100%;
 	height: 80px;
 	 
 }
@@ -205,6 +197,15 @@ nav{
 	width: 100%;
 	background-image: url(img/banner_img.png);
 	background-size: cover;
+}
+
+
+.two_rise{
+	opacity: 1;
+}
+
+.two_rise{
+	opacity: 1;
 }
 
 .two_mainText {
@@ -273,12 +274,12 @@ nav{
 
 .screen_three {
 	width: 100%;
-	height: 1052px;
+	height: 900px;
 	background: url(img/fon1.jpg) top no-repeat;
 	background-size: cover;
 }
 .three_tittle {
-	padding-top: 6.2%;
+	padding-top: 5%;
 	font-family: Rubik-medium;
 	font-style: normal;
 	font-size: 48px;
@@ -295,24 +296,29 @@ nav{
 	display: flex;
 	flex-direction: column;
 	align-items: center;	
-	justify-content: center;
-	margin-top: 10%;
+	margin-top: 7%;
+	height: 568px;
 }
+
 
 .string{
 	
 	display: flex;
 }
 .string1{
-	height: 24.2%;
+	height: 36%;
 	width: 69.91%;
+}
+.subject_right{
+	margin-right: 190px;
 }
 
 .string2{
-	height: 14.5%;
+	height: 45%;
 	width: 68.1%;
 	margin-top: 11.2%;
 }
+
 
 .obj_1{
 	width: 122%;
@@ -327,23 +333,35 @@ nav{
 }
 .obj_4{
 	margin-left: 51%;
-	margin-right: 3.9%;
+	padding-left: 25px;
+}
+
+.obj_5{
+	width: 35%;
+}
+
+.obj_6{
+	margin-left: 46%;
+	width:  35%;
 }
 
 .element_img {
 	margin: 0 auto;
 	display: block;
+	margin-left: 60px;
 }
 
 .elment_img_1{
 	width: 175px;
 	height: 151px;
 	background: url(img/subj/shkaf.png) center no-repeat;
+	margin-left: 11px;
 }
 .elment_img_1:hover{
 	width: 175px;
 	height: 151px;
 	background: url(img/subj/Mask_Group.png) center no-repeat;
+	margin-left: 11px;
 }
 .elment_img_2{
 	width: 251px;
@@ -359,7 +377,7 @@ nav{
 	width: 140px;
 	height: 150.53px;
 	background: url(img/subj/kitchen.png)center  no-repeat;
-	margin-left: 10px;
+	margin-left: 20px;
 }
 .elment_img_3:hover{
 	width: 140px;
@@ -376,6 +394,62 @@ nav{
 	height: 151px;
 	background: url(img/subj/peregorodka2.png) center no-repeat;
 }
+
+.elment_img_5{
+	width: 175px;
+	height: 151px;
+	background: url(img/subj/vanna.png) center no-repeat;
+	background-size: 175px auto;
+}
+.elment_img_5:hover{
+	width: 175px;
+	height: 151px;
+	background: url(img/subj/vanna2.png) center no-repeat;
+	background-size: 175px auto;
+}
+.elment_img_6{
+	width: 251px;
+	height: 141px;
+	background: url(img/subj/torg.png) center no-repeat;
+	background-size: 165px auto;
+}
+.elment_img_6:hover{
+	width: 251px;
+	height: 141px;
+	background: url(img/subj/torg2.png) center no-repeat;
+	background-size: 165px auto;
+} 
+.elment_img_7{
+	width: 180px;
+	height: 160px;
+	background: url(img/subj/bar.png) center no-repeat;
+	background-size: 175px auto;
+}
+
+.elment_img_7:hover{
+	width: 180px;
+	height: 160px;
+	background: url(img/subj/bar.png) center no-repeat;
+	background-size: 175px auto;
+}
+
+.elment_img_8{
+	width: 173px;
+	height: 151px;
+	background: url(img/subj/office.png) center no-repeat;
+	background-size: 175px auto;
+}
+
+.elment_img_8:hover{
+	width: 173px;
+	height: 151px;
+	background: url(img/subj/office.png) center no-repeat;
+	background-size: 175px auto;
+}
+
+
+
+
 .string2 {}
 
 .SubText{
@@ -383,26 +457,29 @@ nav{
 	font-weight: 600;
 	display: block;
 	text-align: center;
+	width: 130%;
 }
 
 .SubText_1{
-	margin-top: 27px;
+	margin-top: 15px;
+	width: 100%;
 }
 .SubText_2{
-	margin-top: 32px;
+	margin-top: 15px;
 }
 .SubText_3{
-	margin-top: 24.7px;
+	margin-top:  15px;
 }
 .SubText_4{
-	margin-top: 24px;
+	margin-top: 15px;
+
 }
 
 .checkbox{
 	display: flex;
 	align-items:flex-end;
 	justify-content: center;
-	margin-top: 3%;
+	margin-top: 1%;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -416,6 +493,10 @@ nav{
 	border-radius: 50%;
 	position: relative;
 	bottom: 0;
+}
+
+.check{
+	background-color: #000;
 }
 
 .rightQuire{
@@ -496,7 +577,7 @@ nav{
 
 .sreen_five{
 	width: 100%;
-	height: 1144px;
+	height: 1000px;
 	background:#fffbed;
 	position: relative;
 }
@@ -527,7 +608,7 @@ nav{
 	font-family: Rubik;
 	font-style: normal;
 	position: relative;
-	top: 8%;
+	top: 5%;
 
 	font-weight: 500;
 	font-size: 48px;
@@ -820,7 +901,7 @@ input{
 
 .ten{
 	width: 100%;
-	height: 917px;
+	height: 800px;
 	background-color: rgba(18, 25, 44, 1);
 	padding-top: 9.6%;
 }
@@ -856,10 +937,16 @@ input{
 	height: 75px;
 	position: absolute;
 	bottom: 0;
+	color:rgba(248, 203, 23, 1);
+	font-weight: 900;
+	transition: .5s all;
 }	
 
 .btn_ten:hover{
-	color:#fff;
+	color:#000;
+	border: 3px solid #fff;
+	background-color: #fff;
+	font-weight: 900;
 }
 
 footer{

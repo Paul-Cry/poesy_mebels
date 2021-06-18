@@ -130,10 +130,10 @@ const app = new Vue({
 // Слайдер 
 $('.subject').slick({
 	infinite: true,
-	centerMode: true,
-	  slidesToShow: 3,
-	  slidesToScroll: 2,
-	  dots: true,
+    slidesToShow: 2,
+	slidesToScroll: 2,
+	dots: true,
+    rows: 2
 });
 
 $('.slader').slick({
@@ -143,6 +143,8 @@ $('.slader').slick({
 	  slidesToScroll: 2,
 	  dots: true,
 });
+
+
 
 
 

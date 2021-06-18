@@ -49,7 +49,7 @@
   align-items: center;
   text-align: cetner;
   margin: 0 auto;
-  padding: 60px;
+  padding: 0 60px;
 }
 
 .provider_img{
@@ -65,7 +65,7 @@
   border: none;
   background: transparent;
   outline: none;
-
+  margin: 0 40px;
   width: 40px;
   height: 70px;
 
@@ -91,34 +91,57 @@
 
 /* Точки (булиты) */ 
 .slader .slick-dots {
-  display: flex !important;
   bottom: -10px;
-  position: absolute;
-  justify-content: center;
   left: 40%;
   
 } 
 
-.slader .slick-dots li{
+.slick-dots{
+  display: flex !important;
+  position: absolute;
+  justify-content: center;
+}
+
+.slick-dots li{
   list-style: none;
 } 
 
+.subject .slick-dots{
+	margin-top: 10px;
+  position: absolute;
+  bottom: 0;
+  justify-self: center;
+}
+
+
+
 /* Активная точка */ 
-.slader .slick-dots li.slick-active button{
+ .slick-dots li.slick-active button{
   background-color: transparent;
   border: 1px solid rgba(248, 203, 23, 1);
 } 
 
+.subject  .slick-dots li.slick-active button{
+  background-color: transparent;
+  border: 1px solid rgb(9, 9, 9);
+} 
+
+
+
 /* Элемент точки */ 
-.slader .slick-dots li button{
+ .slick-dots li button{
   font-size: 0;
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   margin: 1px 10px;
   border-radius: 50%;
   background-color: rgba(248, 203, 23, 1);
   outline: none;
   border: none;
-
-
 } 
+
+.subject .slick-dots li button{
+  width: 20px;
+  height: 20px !important;
+  background-color:rgb(9, 9, 9);
+}

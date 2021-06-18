@@ -213,7 +213,15 @@ nav{
 .two_mainText {
 	font-family: 'Rubik-bold';
 	margin-top: 10%;
+}
 
+.obj{
+	width: 300px !important;
+	display: flex !important;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+	
 }
 
 
@@ -344,14 +352,15 @@ nav{
 
 
 .subject {
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;	
 	margin-top: 5%;
 	height: 568px;
-	user-select:  none;
-	transition:  1s;
+	display: grid;
+	position: relative;
+
+}
+
+.subject .slick-arrow{
+	display:none !important;
 }
 
 
@@ -376,35 +385,10 @@ nav{
 }
 
 
-.obj_1{
-	width: 122%;
-}
-
-.obj_2{
-	margin-left: 46%;
-}
-.obj_3{
-	width: 112%; /**/
-	height: 100.87%;
-}
-.obj_4{
-	margin-left: 51%;
-	padding-left: 25px;
-}
-
-.obj_5{
-	width: 35%;
-}
-
-.obj_6{
-	margin-left: 46%;
-	width:  35%;
-}
 
 .element_img {
-	margin: 0 auto;
 	display: block;
-	margin-left: 60px;
+	
 }
 
 .elment_img_1{
@@ -485,7 +469,7 @@ nav{
 .elment_img_7:hover{
 	width: 180px;
 	height: 160px;
-	background: url(img/subj/bar.png) center no-repeat;
+	background: url(img/subj/bar2.png) center no-repeat;
 	background-size: 175px auto;
 }
 
@@ -499,9 +483,30 @@ nav{
 .elment_img_8:hover{
 	width: 173px;
 	height: 151px;
-	background: url(img/subj/office.png) center no-repeat;
+	background: url(img/subj/office2.png) center no-repeat;
 	background-size: 175px auto;
 }
+
+.screen_three .slick-slide > div{
+	
+}
+
+.screen_three  .slick-slide > div:nth-child(even){
+	margin-top: 80px;	
+}
+
+.screen_three  .slick-slide > div > div{
+	height: 215px;
+	position: relative;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -513,23 +518,12 @@ nav{
 	font-weight: 600;
 	display: block;
 	text-align: center;
-	width: 130%;
+	position: absolute;
+	height: 24%;
+	bottom: 0;
 }
 
-.SubText_1{
-	margin-top: 15px;
-	width: 100%;
-}
-.SubText_2{
-	margin-top: 15px;
-}
-.SubText_3{
-	margin-top:  15px;
-}
-.SubText_4{
-	margin-top: 15px;
 
-}
 
 .checkbox{
 	display: flex;

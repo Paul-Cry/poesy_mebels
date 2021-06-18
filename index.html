@@ -5,28 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="assets/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="assets/slick/slick-theme.css"/>
 </head>
 <title>poesy_mebels</title>
-<style>
-.subject1-enter-active, .subject-leave-active {
-	transition: all .3s ease-in-out;
-}
-
-.subject1-enter,
-.subject1-leave-to {
-	opacity: 0;
-}
-
-</style>
 </head>
 <body>
 	<div id="app">
-		<div class="windows">
-			{{scrol}}
-		</div>
 		<header id='main'>
 			<div class="header_bagk headers_items">
 				<img src="img/logo.png" alt="" class="header_logo">
@@ -71,59 +56,9 @@
 
 			<div class="container" id='subject'>
 				<div class="three_tittle" :class="{'hide' : !screen_three, 'show': screen_three}">Что мы можем</div>
-				<!-- <transition name='subject1' mode="out-in" :duration="500">
-					<div class="subject"  :class="{'move_subject' :  threeAnimation}" v-if='check' key="subjectOne">
-						<div class="string string1">
-							<div class="obj obj_1">
-								<div class="element_img elment_img_1"></div>
-								<div class="SubText SubText_1">Шкаф</div>
-							</div>
-							<div class="obj obj_2">
-								<div class="element_img elment_img_2"></div>
-								<div class="SubText SubText_2">Детская мебель</div>
-							</div>
-						</div>
-						<div class="string2 string">
-							<div class="obj obj_3">
-								<div alt="" class="element_img elment_img_3"></div>
-								<div class="SubText SubText_3">Кухни эконом и<br>премиум класса</div>
-							</div>
-							<div class="obj obj_4">
-								<div class="element_img elment_img_4"></div>
-								<div class="SubText SubText_4">
-									Межкомнатные<br>перегородки 
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="subject subject_right" v-if='!check' key="subjectTwo">
-						<div class="string string1">
-							<div class="obj obj_1">
-								<div class="element_img elment_img_5"></div>
-								<div class="SubText SubText_1">Мебель для ванной</div>
-							</div>
-							<div class="obj obj_2">
-								<div class="element_img elment_img_6"></div>
-								<div class="SubText SubText_2">Торговое и выставочное оборудование</div>
-							</div>
-						</div>
-						<div class="string2 string">
-							<div class="obj obj_3">
-								<div alt="" class="element_img elment_img_7"></div>
-								<div class="SubText SubText_3">Мебель для баров и <br> ресторанов</div>
-							</div>
-							<div class="obj obj_4">
-								<div class="element_img elment_img_8"></div>
-								<div class="SubText SubText_4">
-									Офисная мебель
-								</div>
-							</div>
-						</div>
-					</div>
-				</transition> -->
 				<div class="subject"  :class="{'move_subject' :  threeAnimation}" v-if='check' key="subjectOne">
 						<div class="obj obj_1">
-							<img :src="object[0]" alt="" @mouseover=" object[0] = 'img/subj/Mask_Group.png'">
+							<div class="element_img elment_img_1"></div>
 							<div class="SubText SubText_1">Шкаф</div>
 						</div>
 						<div class="obj obj_2">
@@ -159,10 +94,7 @@
 							</div>
 						</div>		
 				</div>
-				<div class="checkbox">
-					<div class="quire" :class=" {'check' : check}" @click='change_chek("right")'></div>
-					<div class="quire rightQuire" :class=" {'check' : !check}" @click='change_chek("left")'></div>
-				</div>		
+					
 			</div>
 		</div>
 		<div class="screen_four">

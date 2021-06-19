@@ -3,41 +3,250 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style.css"></link>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<title>poesy_mebels</title>
+	<style>
 	
-	<title>Poesy_mebels</title>
+
+/*		.subject-enter-active{
+			opacity: 1;
+		}
+
+		.subject-enter-active, .subject-leave-active{
+			 transition: 1s;
+		}
+
+		.subject-enter, .subject-leave-to{
+			opacity: 0;
+		}*/
+
+		  .subject1-enter-active, .subject-leave-active {
+          transition: all .3s ease-in-out;
+      }
+
+      .subject1-enter,
+      .subject1-leave-to {
+          opacity: 0;
+      }
+
+	</style>
 </head>
 <body>
-	<div class="header">
-		<div class="container">
-			<img src="img/logo.png" class="logo">
-			<section class="header_text">
-				<section class="text_One ">ИЗГОТОВЛЕНИЕ МЕБЕЛИ</section>
-				<section class="text_Two">ПО ИНДИВИДУАЛЬНОМУ ЗАКАЗУ В СУРГУТЕ</section> 	
-			</section>
-			<div class="button">
-				<div class="button_link">
-					<a href="#" >ОФОРМИТЬ ЗАКАЗ</a>
+<div id="app">
+	<header id='main'>
+		<div class="header_bagk headers_items">
+			<img src="img/logo.png" alt="" class="header_logo">
+			<div class="container headers_postion">
+				<div class="heder_blockText">
+					<div class="header__title">Изготовление мебели</div>
+				<div class="header__text">По индивидуальному заказу в сургуте</div>
 				</div>
-			</div>
-			<div class="nav_background">
-				
+				<div class="button btn_header" style="margin-top: 136px;"><a href="#">Оформить заказ</a></div>
 			</div>
 		</div>
-		<nav>
+		<nav> 
 			<div class="container">
-				<div class="nav_row">
-					<div class="nav_block"><a href="#">Главная</a></div>
-					<div class="nav_block"><a href="#">О нас</a></div>
-					<div class="nav_block"><a href="#">Виды работы</a></div>
-					<div class="nav_block"><a href="#">Галлерея</a></div>
-					<div class="nav_block"><a href="#">Контакты</a></div>
+				<div class="nav_positon">
+					<div class="nav_text" ><a href="#sreen_five">Главная</a></div>
+					<div class="nav_text" @click='changeWind(900)'><a >О нас</a></div> 
+					<div class="nav_text" @click='changeWind(1567)'><a >Виды работы</a></div>
+					<div class="nav_text" @click='changeWind(0)'><a >Галлерея</a></div>
+					<div class="nav_text" @click='changeWind(8160)'><a>Контакты</a></div>
+				</div>	
+				
+			</div>
+		</nav>
+	</header>
+	<div class="screen_two items" id="screen_two">
+		<div class="container " :style="hide">
+			<div class="two_mainText">
+				<div class="main_title">Добро пожаловать  на наш сайт</div>
+				<div class="main_text">мебельной компании “Поэзия Мебели”!  </div>
+			</div>
+			<div class="two_items">
+				<div class="two_text">Мы молодая компания, работаем на мебольном рынке с момента своего основания  в 2012 году.<br>
+					Мы изготавливаем  мебели по индивидуальному заказам.</div>
+				<div class="img_position">
+					<img src="img/free-icon-shield-4328124 1.png" alt="" class="two_img">
 				</div>
-			</div>	
-			</nav>
+			</div>
+			
+		</div>
 	</div>
+	<div class="screen_three" id="screen_three">
+
+		<div class="container">
+			<div class="three_tittle">Что мы можем</div>
+			<transition name='subject1' mode="out-in" :duration="500">
+				<div class="subject" v-if='check' key="subjectOne">
+					<div class="string string1">
+						<div class="obj obj_1">
+							<div class="element_img elment_img_1"></div>
+							<div class="SubText SubText_1">Шкаф</div>
+						</div>
+						<div class="obj obj_2">
+							<div class="element_img elment_img_2"></div>
+							<div class="SubText SubText_2">Детская мебель</div>
+						</div>
+					</div>
+					<div class="string2 string">
+						<div class="obj obj_3">
+							<div alt="" class="element_img elment_img_3"></div>
+							<div class="SubText SubText_3">Кухни эконом и<br>премиум класса</div>
+						</div>
+						<div class="obj obj_4">
+							<div class="element_img elment_img_4"></div>
+							<div class="SubText SubText_4">
+								Межкомнатные<br>перегородки 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="subject subject_right" v-if='!check' key="subjectTwo">
+					<div class="string string1">
+						<div class="obj obj_1">
+							<div class="element_img elment_img_5"></div>
+							<div class="SubText SubText_1">Мебель для ванной</div>
+						</div>
+						<div class="obj obj_2">
+							<div class="element_img elment_img_6"></div>
+							<div class="SubText SubText_2">Торговое и выставочное оборудование</div>
+						</div>
+					</div>
+					<div class="string2 string">
+						<div class="obj obj_3">
+							<div alt="" class="element_img elment_img_7"></div>
+							<div class="SubText SubText_3">Мебель для баров и <br> ресторанов</div>
+						</div>
+						<div class="obj obj_4">
+							<div class="element_img elment_img_8"></div>
+							<div class="SubText SubText_4">
+								Офисная мебель
+							</div>
+						</div>
+					</div>
+				</div>
+			</transition>
+			
+			<div class="checkbox">
+				<div class="quire" :class=" {'check' : check}" @click='change_chek("right")'></div>
+				<div class="quire rightQuire" :class=" {'check' : !check}" @click='change_chek("left")'></div>
+			</div>		
+		</div>
+	</div>
+	<div class="screen_four">
+			<div class="four_items">	
+				<div class="items_schrank">
+					<img src="./img/shkaf2 1.png" alt="" class="schrank">
+				</div>	
+				<div class="round_items">
+					<div class="four_title">374</div>
+					<img src="./img/Group 1.png" alt="" class='round_linear'>
+					<div class="four_text">ГОТОВЫХ ИЗДЕЛИЙ ЗА <b>5 ЛЕТ</b> </div>
+				</div>
+			</div>
+		</div>
+		<div class="sreen_five" id="sreen_five">
+			<div class="five_title">КОЛЛЕКЦИИ НАШИХ РАБОТ</div>
+			<div class="five_items">
+				<div class="Oline">
+					<img src="img/Rectangle 34.png" alt="" class="Oline_img">
+					<img src="img/Rectangle 29.png" alt="" class="Oline_img">
+					<img src="img/Rectangle 35.png" alt="" class="Oline_img">
+				</div>
+				<div class="Tline">
+					<img src="img/Rectangle 36.png" alt="" class="Oline_img">
+					<img src="img/Rectangle 37.png" alt="" class="Oline_img">
+					<img src="img/шк4.jpg" alt="" class="Oline_img">
+				</div>
+			</div>
+			<div class=" btn_five button button_color "><a href="#">Оформить заказ</a></div>
+		</div>
+		<div class="sex_wind">
+			<p class="sex_wind_title">Наши поставщики</p>
+				<div class="slaider">
+					<img src="img/Лево.png" alt="" class="arrows left ">
+					<div class="slaider_items">
+						<div class="block_slaider lite_slaider">
+							<img src="img/Поставщики/l-4.png" alt="" class="provider">
+						</div>
+						<div class="block_slaider main_slaider">
+							<img src="img/Поставщики/l-2.png" alt="" class=" main_porovider">
+						</div>
+						<div class="block_slaider lite_slaider">
+							<img src="img/Поставщики/l-3.png" alt="" class="provider">
+						</div>
+					</div>
+					<img src="img/Право.png" alt="" class="arrows right">
+				</div>
+		</div>
+		<div class="seven">
+			<div class="seven_wind wind">
+				<p class='seven_title' style="font-family: 'Rubik-medium'">10 <img src="img/skidka.png" alt="" class="skidka"> Скидка</p>
+				<p class="seven_text seven_items1" >ЗА ПОВТОРНОЕ ОБРАЩЕНИЕ</p>
+				<p class='seven_items2'><b>+</b></p>
+				<p class="seven_text seven_items2 ot" >Рассрочка 3 месяца <br>
+					<span style="font-family: 'Rubik-medium'">БЕЗ УЧАСТИЯ БАНКА</span>
+				</p>
+				<div class=" btn_seven button button_color "><a href="#">Оформить заказ</a></div>
+			</div>
+		</div>
+		<div class="eight">
+			<div class="eight_title">Выезд на замер <br>
+				И дизайн проекта  бесплатно</div>
+			<div class="subtitle">
+				<p class="eight_text">В итоге вы получаете:</p>
+				<img src="img/pencil.png" alt="">
+			</div>			
+			<div class="eight_block">
+				<p class="eight_items">
+					<img src="img/3d.png" alt="" class='eight_img'> <span class="eight_items_text">3D модель мебели</span>
+				</p>
+				<p class="eight_items">
+					<img src="img/rub.png" alt="" class='eight_img'> <span class="eight_items_text" >Полную стоимость заказа </span>
+				</p>
+			</div>
+		</div>
+		<div class="nine">
+			<div class="nine_wind wind">
+				<div class='nine_title' style="font-family: 'Rubik-medium'">Оформите заявку</div>
+				<span class="seven_text nine_items1"  id='123'>На бесплатную констультацию <br>
+							и выезд замерщика</span>
+				<div class="nine_items">
+					<div class="input_name">
+						<input type="text" class="name input" placeholder="Имя *">
+						<input type="text" class="name input" placeholder="Фамилия *">
+					</div>
+					<input type="tel" class='input tel' placeholder="Телефон">
+					<textarea name="" id="" cols="30" rows="10" class='input' placeholder="Сообщение"></textarea>
+				</div>
+				<div class=" btn_nine button button_color "><a href="#">Оформить заказ</a></div>
+			</div>
+		</div>
+		<div class="ten">
+			<div class="container">
+				<div class="title titel_ten">Контакты</div>
+				<div class="ten_items">
+					<span class='ten_text'>
+						База “Союз оптовиков”, магазин BOSH, 2 ЭТАЖ <br>
+						Адрес: г.Сургут, ул. 30-лет Победы 51/4<br>
+						Телефон: +7 (3462) 97-72-70<br>
+						E-mail: rsit86@mail.ru
+						<div class=" btn_ten button "><a href="#" >Заказать мебель</a></div>
+					</span>
+					<div class='map' style="overflow:hidden;width: 521px;position: relative;"><iframe width="521" height="360" src="https://maps.google.com/maps?width=521&amp;height=360&amp;hl=en&amp;q=%D0%B3.%D0%A1%D1%83%D1%80%D0%B3%D1%83%D1%82%2C%20%D1%83%D0%BB.%2030-%D0%BB%D0%B5%D1%82%20%D0%9F%D0%BE%D0%B1%D0%B5%D0%B4%D1%8B%2051%2F4+(%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="https://embedgooglemaps.com/en/">embedgooglemaps EN</a> & <a href="https://youtubeembedcode.com">Embed youtube video</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><br />
+				</div>
+			</div>
+		</div>
+		<footer>
+			<img src="img/Mask Group.png" alt="" class='footer_img'>
+			<span class='footer_text'>Изготовление  мебели по <br>
+Индивидуальному заказу в г.Сургуте</span>
+		</footer>
+		</div>	
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script type="text/javascript" src="assets/index.js"></script>
 </body>
 </html>

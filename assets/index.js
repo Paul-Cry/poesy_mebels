@@ -142,7 +142,7 @@ const app = new Vue({
 console.log(234)
 
 
-Слайдер 
+
 $('.subject').slick({
 	infinite: true,
     slidesToShow: 2,

@@ -2,6 +2,10 @@
 	font-family: 'Rubik';
 	src: url(fonts/Rubik-Light.ttf);
 }
+* {
+	min-height: 0;
+	min-width: 0;
+  }
 
 @font-face{
 	font-family: 'Rubik-medium';

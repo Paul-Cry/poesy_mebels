@@ -1237,11 +1237,73 @@ footer{
 	}
 
 	.exit{
-		width: 30px;
-		height: 30px;
+		width: 40px;
+		height: 40px;
 		position: absolute;
 		right: 25px;
+		opacity: 0;
 		top: 25px;
+		z-index: 4;
+	
+	}
+
+	.exit_active{
+		animation: exit  1s ease forwards;
+		opacity: 1;
+	}
+
+	@keyframes exit {
+		0%{
+		
+		}
+		100%{
+			transform: rotate3d(30, 60, 0, 360deg);
+		}
+	}
+	
+
+	.exit div{
+		width: 35px;
+		height: 3px;
+		background-color: #F8CB17;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+
+	.nav_text:hover{
+		background-color: transparent;
+	}
+
+
+
+	.exit1{
+		animation: exit1 1s ease forwards;
+	}
+
+	.exit2{
+		animation: exit2 1s ease forwards;
+	}
+
+	@keyframes exit1{
+		0%{
+			opacity: 0;
+			
+		}
+
+		100%{
+			transform: rotate(135deg)
+		}
+	}
+
+	@keyframes exit2{
+		0%{
+			opacity: 0;
+		
+}
+		100%{
+			transform: rotate(-135deg);
+		}
 	}
 
 	.screen_two{
@@ -1273,22 +1335,9 @@ footer{
 		display: none;
 	}
 
-	.exit div{
-		width: 35px;
-		height: 3px;
-		background-color: #F8CB17;
-		position: absolute;
-		right: 10px;
-		top: 10px;
-	}
+	
 
-	.exit div:nth-child(1){
-		transform: rotate(45deg)
-	}
-
-	.exit div:nth-child(2){
-		transform: rotate(-45deg);
-	}
+	
 
 
 	header{

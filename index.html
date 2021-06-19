@@ -24,9 +24,9 @@
 				<div class="nav_text" @click='changeWind(1567)'><a >Виды работы</a></div>
 				<div class="nav_text" @click='changeWind(0)'><a >Галлерея</a></div>
 				<div class="nav_text" @click='changeWind(8160)'><a>Контакты</a></div>
-				<div class="exit">
-					<div></div>
-					<div></div>
+				<div class="exit" :class='{"exit_active": exit}' @click='exitPass()'>
+					<div :class='{"exit1": exit}'></div>
+					<div :class='{"exit2": exit}'></div>
 				</div>
 			</div>
 			<div class="header_bagk headers_items">

@@ -99,6 +99,7 @@ const app = new Vue({
 		eight1: '',
 		eight2:'',
 		wind: '',
+		exit: null,
 		object: [
 			"img/subj/shkaf.png"
 		],
@@ -134,7 +135,13 @@ const app = new Vue({
 		},
 		cons(){
 			app.burger = true
-			console.log(1234)
+			setTimeout(()=>{
+				this.exit = true
+			}, 1200)
+		},
+		exitPass(){
+			this.burger = null
+			this.exit = null
 		}
 	}
 })

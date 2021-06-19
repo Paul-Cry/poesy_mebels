@@ -13,7 +13,7 @@
 	src: url(fonts/static/Rubik-Bold.ttf);
 }
 html {
-	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 body{
@@ -21,6 +21,7 @@ body{
 	padding: 0;
 	font-family: 'Rubik';
 	overflow-x: hidden;
+
 }
 
 
@@ -45,6 +46,10 @@ header{
 	width: 1170px;
 	margin: 0 auto;
 	transition: 2s all;
+}
+
+.mobilNav{
+	display: none;
 }
 .headers_items{
 	display: flex;
@@ -571,6 +576,7 @@ nav{
 	display: flex;
 	margin:0 auto;
 
+
 }
 
 
@@ -732,7 +738,7 @@ nav{
 
 
 .sex_wind_title{
-	font-family: Rubik;
+	font-family: 'Rubik';
 	font-style: normal;
 	font-weight: 500;
 	font-size: 3em;
@@ -1072,17 +1078,288 @@ footer{
 }
 
 
+@media screen and (max-width: 480px){
+
+	.burger{
+		position: absolute;
+		left: 10px;
+		top: 15px;
+		width:;
+		z-index: 1;
+	}
+	.mobilNav{
+		width: 380px;
+		position: relative;
+		display: block;
+		z-index: 1;
+		height: 304px;
+		position: absolute;
+		background-color: #12192C;
+		top:0;
+		left: -380px;
+		transition: all 2s;
+	}
+
+	.btn_nine{
+		bottom: 2px;
+	}
+
+	.mobilNav_activ{
+		left: 0 !important;
+	}
+
+	.nav_text{
+		height: 60px;
+		width: 100px;
+		justify-content: start;
+		margin-left: 30px;
+	}
+	.slader .slick-dots{
+		bottom: 20px !important;
+	}
+	
+	.seven{
+		height: 600px;
+	
+	}
+
+	.wind{
+		opacity: 1;
+		width: 100%;
+		height: 100%;
+	}
+
+	.four_items{
+		align-items: center;
+	}
+
+	.screen_four{
+		height: 600px;
+	}
+
+	.seven_title{
+		margin-top: 50px;
+	}
+
+	.wind .button{
+		margin-bottom: 50px !important;
+	}
+
+	.eight{
+		height: 600px;
+	}
+	.eight_items:nth-child(1){
+		opacity: 1;
+	}
+	
+	.eight_items:nth-child(2){
+		opacity: 1;
+	}
+	.subtitle img{
+		opacity:1 !important;
+		width: 200px;
+	}
+
+	.eight_items_text{
+		font-size: 18px;
+	}
+
+	.eight_img{
+		height: 40px;
+	}
+	.eight_title{
+		opacity:1;
+		font-size: 2.1em;
+		margin-top: 20px;
+	}
+	.eight_block{
+		top: 50%;
+	}
+
+	.eight_block > .eight_items {
+		margin-right: 180px;
+	}
+
+	.eight_text{
+		font-size: 1.5em;
+	}
+
+	@keyframes eightOne{
+		0%{
+			margin-right: 0px;
+		}
+	
+	}
+	.nine{
+		height: 600px;
+		background-image: none;
+	}
+
+	.nine_wind{
+		margin-left: 0;
+	}
+
+	.nine_title{
+		font-size: 2.25em;
+	}
+
+	.nine_wind{
+		padding: 30px 0 !important;
+	}
+
+	.seven_text{
+		font-size: 18px;
+	}
+
+	.burger div{
+		width: 40px;
+		height: 5px;
+		background-color: rgba(167, 162, 29, 0.583);
+		margin-top: 5px;
+	}
+
+	.input_name{
+		flex-direction: column;
+		height: 85px;	
+	}
+
+	.nine_items input, textarea{
+		width: 100%;
+		outline: none;
+	}
+
+	.ten{
+		margin-top: 50px;
+	}
+
+	.exit{
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		right: 25px;
+		top: 25px;
+	}
+
+	.screen_two{
+		height: 650px;
+	}
+
+	.main_title{
+		margin-top: 20%;
+		margin: 0 auto;
+		line-height: 140%;
+		width: 340px;
+	}
+
+	.two_text{
+		margin-left: 40px;
+		
+		text-align: left;
+	}
+
+	.main_text{
+		margin: 0 auto;
+		font-size: 1.8em;
+		width: 250px;
+		margin-top: 20px;
+		line-height: 130%;
+	}
+
+	nav{
+		display: none;
+	}
+
+	.exit div{
+		width: 35px;
+		height: 3px;
+		background-color: #F8CB17;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+
+	.exit div:nth-child(1){
+		transform: rotate(45deg)
+	}
+
+	.exit div:nth-child(2){
+		transform: rotate(-45deg);
+	}
 
 
+	header{
+		height: 600px;
+		background-size: auto 600px;
+	}
+
+	body{
+		font-size: 12px;
+	}
+
+	.headers_postion{
+		height:
+	}
+	.container{
+		width: 100%;
+	}
+	.heder_blockText{
+		line-height: 45px;
+		margin-top: 40%;
+	}
+
+	.header__title{
+		font-size: 2em;
+	}
+	.header__text{
+		font-size: 2em;
+	}
+	.button{
+		width: 200px;
+		font-size: 14px;
+		margin-top: 100px !important;
+	}
+
+	
+	.header_logo{
+		height: 8% !important;
+		margin-top: 15%;
+		width: auto;
+		opacity: 0;
+		animation: appearance 3s forwards;
+	}
+
+	.schrank{
+		height: 250px;
+		margin-left: 20px;
+	}
+
+	.round_items{
+		opacity: 1;
+		height: min-content;
+	}
+
+	.round_linear{
+		width: 200px;
+	}
+	.four_title{
+		top: 85px !important;
+		left: 32%;
+	}
+
+	.four_text{
+		font-size: 2em;	
+		width: 452px;
+		position: absolute;
+		top: 200px;
+		right: 0.1%;
+	}
+
+	.items_schrank{
+		height: 300px;
 
 
-
-
-
-
-
-
-
+	}
+}
 
 
 

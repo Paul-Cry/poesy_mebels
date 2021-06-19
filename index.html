@@ -13,11 +13,27 @@
 <body>
 	<div id="app">
 		<header id='main'>
+			<div class="burger" @click="cons()">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="mobilNav" :class='{"mobilNav_activ": burger}'>
+				<div class="nav_text" ><a href="#sreen_five">Главная</a></div>
+				<div class="nav_text" @click='changeWind(900)'><a >О нас</a></div> 
+				<div class="nav_text" @click='changeWind(1567)'><a >Виды работы</a></div>
+				<div class="nav_text" @click='changeWind(0)'><a >Галлерея</a></div>
+				<div class="nav_text" @click='changeWind(8160)'><a>Контакты</a></div>
+				<div class="exit">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
 			<div class="header_bagk headers_items">
-				<img src="img/logo.png" alt="" class="header_logo">
+				<img src="img/logo.png" alt="" class="header_logo"  @click='cons()'>
 				<div class="container headers_postion">
 					<div class="heder_blockText">
-						<div class="header__title">Изготовление мебели</div>
+						<div class="header__title" >Изготовление мебели</div>
 						<div class="header__text">По индивидуальному заказу в сургуте</div>
 					</div>
 					<div class="button btn_header" style="margin-top: 136px;"><a href="#">Оформить заказ</a></div>
@@ -100,7 +116,7 @@
 		<div class="screen_four">
 			<div class="four_items" :style='four_items'>	
 				<div class="items_schrank">
-					<img :src="object[0]" alt="" @mouseover="changeBackground(0)" alt="" class="schrank" >
+					<img src='./img/shkaf2 1.png' alt="" alt="" class="schrank" >
 				</div>	
 				<div class="round_items" :style='fourText'>
 					<div class="four_title">374</div>

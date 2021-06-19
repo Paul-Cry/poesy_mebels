@@ -5,67 +5,75 @@ let action = function(number){
 let counter = 0
 
 window.onscroll = () => {
-	let scrol = window.pageYOffset;
-	console.log(scrol)
-	let opacity = 'opacity: 1 !important'
-	//Таймер 
-	let sleep = (ms)=>{
-			return new Promise((resolve) =>{
-				setTimeout(()=>{
-					resolve()
-				}, ms)
-		})
+	if(window.innerWidth >= 800){
+		app.hide = 'opacity: 0;'
+	
+		let scrol = window.pageYOffset;
+		console.log(scrol)
+		let opacity = 'opacity: 1 !important'
+		//Таймер 
+		let sleep = (ms)=>{
+				return new Promise((resolve) =>{
+					setTimeout(()=>{
+						resolve()
+					}, ms)
+			})
 	}
-
-	let offMove = function(){
-		
-		app.threeAnimation = false;
-	}
-	let four_text = ()=>{
-		app.fourText = 'animation: round_items 1s ease-out forwards;'
-	}
-	app.number = scrol;
-	if(  scrol >= 408){
-		app.hide = opacity;
-	} 
-	if(scrol >= 1377 && counter == 0){
-		counter++
-		app.screen_three = true;
-		app.threeAnimation = true;
-		if(counter > 0){
-			setTimeout(offMove, 1000)
+	
+		let offMove = function(){
+			
+			app.threeAnimation = false;
 		}
-	}
-	if(scrol >= 2158.96655273437 ){
-		app.four_items = 'animation: four_items 2s ease forwards;'
-		setTimeout(four_text, 2000)
-	}
-	if(scrol >= 4287){
-		app.seven_screen = 'animation: wind 2s ease forwards;'
-	}
-	if(scrol >= 5492){
-		app.eth_text = opacity
-		sleep(1000).then(()=>{
-			app.pencil = true
-		})
-		sleep(2000).then(()=>{
-			app.eight1 = 'animation: eightOne 1s  forwards; opacity: 1 !important;'
-		})
-		sleep(3000).then(()=>{
-			app.eight2 = 'animation: eightOne 1s  forwards; opacity: 1 !important;'
-		})
-	}
-	if(scrol >= 6512){
-		app.wind = opacity
+		let four_text = ()=>{
+			app.fourText = 'animation: round_items 1s ease-out forwards;'
+		}
+		app.number = scrol;
+		if(  scrol >= 408){
+			app.hide = opacity;
+		} 
+		if(scrol >= 1377 && counter == 0){
+			counter++
+			app.screen_three = true;
+			app.threeAnimation = true;
+			if(counter > 0){
+				setTimeout(offMove, 1000)
+			}
+		}
+		if(scrol >= 2158.96655273437 ){
+			app.four_items = 'animation: four_items 2s ease forwards;'
+			setTimeout(four_text, 2000)
+		}
+		if(scrol >= 4287){
+			app.seven_screen = 'animation: wind 2s ease forwards;'
+		}
+		if(scrol >= 5492){
+			app.eth_text = opacity
+			sleep(1000).then(()=>{
+				app.pencil = true
+			})
+			sleep(2000).then(()=>{
+				app.eight1 = 'animation: eightOne 1s  forwards; opacity: 1 !important;'
+			})
+			sleep(3000).then(()=>{
+				app.eight2 = 'animation: eightOne 1s  forwards; opacity: 1 !important;'
+			})
+		}
+		if(scrol >= 6512){
+			app.wind = opacity
+		}
 	}
 }
 
-let subject = document.getElementById('subject')
 
-subject.addEventListener('mouseover', function(){
-	console.log(234)
-	alert(234)
-})
+
+
+// let burger = document.querySelectorAll('.mobilNav')
+
+// burger[0].addEventListener('click', ()=>{
+// 	app.burger = true;
+// 	console.log(223443)
+// })
+
 
 
 
@@ -77,7 +85,7 @@ const app = new Vue({
 	el: '#app',
 	data: {
 		number: 0,
-		hide: 'opacity: 0;',
+		hide: null,
 		check: true,
 		check_click: true,
 		screen_three: false,
@@ -93,7 +101,8 @@ const app = new Vue({
 		wind: '',
 		object: [
 			"img/subj/shkaf.png"
-		]
+		],
+		burger: null
 	},
 	methods: {
 		changeWind(number){
@@ -122,12 +131,18 @@ const app = new Vue({
 					break;
 			}
 			return this.object
+		},
+		cons(){
+			app.burger = true
+			console.log(1234)
 		}
 	}
 })
 
+console.log(234)
 
-// Слайдер 
+
+Слайдер 
 $('.subject').slick({
 	infinite: true,
     slidesToShow: 2,
@@ -135,6 +150,9 @@ $('.subject').slick({
 	dots: true,
     rows: 2
 });
+
+
+
 
 $('.slader').slick({
 	infinite: true,

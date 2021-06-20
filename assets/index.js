@@ -23,7 +23,9 @@ window.onscroll = () => {
 	
 	
 		let scrol = window.pageYOffset;
-		console.log(scrol)
+		// console.log(scrol)
+		app.numberScroll = scrol
+		app.navAcive(scrol)
 		
 		//Таймер 
 		let sleep = (ms)=>{
@@ -92,6 +94,7 @@ window.onscroll = () => {
 const app = new Vue({
 	el: '#app',
 	data: {
+		numberScroll: '',
 		number: 0,
 		hide: null,
 		check: true,
@@ -108,11 +111,16 @@ const app = new Vue({
 		eight2:'',
 		wind: '',
 		exit: null,
+		navButton: [],
 		object: [
 			"img/subj/shkaf.png"
 		],
 		burger: null
 	},
+	mounted(){
+		this.navButton[0] = true;
+	},
+	
 	methods: {
 		changeWind(number){
 			action(number);
@@ -156,11 +164,48 @@ const app = new Vue({
 		},
 		showWind(){
 			showWindJs()
+		},
+		serchNav(number){
+			for(let i = 0; i<= 9; i++){
+				// console.log(number)
+				
+				if(number == i){
+					app.navButton[i] = true
+				}else{
+					app.navButton[i] = false 
+				}
+			}
+		},
+		navAcive(number){
+				if(number >= 0 && number <= 864){
+					this.serchNav(0)
+				}else if(number >= 864 && number <=1767.6){
+					this.serchNav(1)
+				}else if(number >= 1767.6 && number <= 2551){
+					this.serchNav(2)
+				}else if(number >= 2551 && number <= 3264){
+					this.serchNav(3)
+				}else if(number >= 3260 && number <= 4266){
+					this.serchNav(4)
+				}else if(number >= 4266 && number <= 4711.25 ){
+					this.serchNav(5)
+				}else if(number >= 4711 && number <= 5626 ){
+					this.serchNav(6)
+				}else if(number >= 5627 && number <= 6491.25 ){
+					this.serchNav(7)
+				}else if(number >= 6491 && number <= 7406 ){
+					this.serchNav(8)
+				}else if(number >= 7406 && number <= 7852 ){
+					this.serchNav(9)
+				}			
+
 		}
 	}
 })
 
-console.log(234)
+
+
+
 
 
 // if(window.innerWidth >= 800){
@@ -174,11 +219,12 @@ console.log(234)
 			{
 				breakpoint: 437,
 				settings: {
+					centerPadding: '140px',
 					slidesToShow: 2,
 					slidesToScroll: 2,
 					dots: true,
 					rows: 2,
-					centerPadding: '140px',
+					
 				}
 			}
 		]
@@ -188,27 +234,26 @@ console.log(234)
 
 
 $('.jobs_slider').slick({
-	infinite: true,
-	centerMode: true,
+    dots: true,
+	
+    infinite: true,
+    speed: 300,
     slidesToShow: 1,
-	slidesToScroll: 1,
-	dots: true,
-
+    adaptiveHeight: true
 });
 
 $('.slader').slick({
-	infinite: true,
-	
+	  infinite: true,
 	  slidesToShow: 3,
 	  slidesToScroll: 2,
 	  dots: true,
 	  responsive: [
 		{
-			breakpoint: 437,
+			breakpoint: 460,
 			settings: {
 				slidesToShow: 1,
 				slidesToScroll: 1,
-				centerPadding: '90px',
+				
 			}
 		}
 	]
@@ -221,6 +266,7 @@ $('.slader').slick({
 
 $('.subject').slick({
 	infinite: true,
+	centerMode: true,
     slidesToShow: 2,
 	slidesToScroll: 2,
 	dots: true,

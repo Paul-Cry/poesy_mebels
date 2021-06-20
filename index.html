@@ -12,6 +12,7 @@
 </head>
 <body>
 	<div id="app" :class='{"body_hidden": burger}'>
+
 		<header id='main'>
 			<div class="burger" @click="cons()">
 				<div></div>
@@ -53,16 +54,16 @@
 			</nav>
 		</header>
 		<div class="navFixed">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
+			<div :class='{"navFixed_active": navButton[0]}' @click='changeWind(0)' ></div>
+			<div :class='{"navFixed_active": navButton[1]}' @click='changeWind( 865)' ></div>
+			<div :class='{"navFixed_active": navButton[2]}' @click='changeWind(1769)' ></div>
+			<div :class='{"navFixed_active": navButton[3]}' @click='changeWind(2552)' ></div>
+			<div :class='{"navFixed_active": navButton[4]}' @click='changeWind(3298 )' ></div>
+			<div :class='{"navFixed_active": navButton[5]}' @click='changeWind(4268)' ></div>
+			<div :class='{"navFixed_active": navButton[6]}' @click='changeWind(4712)' ></div>
+			<div :class='{"navFixed_active": navButton[7]}' @click='changeWind(5628)' ></div>
+			<div :class='{"navFixed_active": navButton[8]}' @click='changeWind(6493)' ></div>
+			<div :class='{"navFixed_active": navButton[9]}' @click='changeWind(7408)' ></div>
 		</div>
 		
 		<div class="screen_two items" id="screen_two" :class='{"headers_items_acitive": burger}'>
@@ -92,35 +93,35 @@
 						</div>
 						<div class="obj obj_2">
 							<div class="element_img elment_img_2"></div>
-							<div class="SubText SubText_2">Детская мебель</div>
+							<span class="SubText SubText_2">Детская мебель</span>
 						</div>
 						<div class="obj obj_3">
 							<div alt="" class="element_img elment_img_3"></div>
-							<div class="SubText SubText_3">Кухни эконом и<br>премиум класса</div>
+							<span class="SubText SubText_3">Кухни эконом и<br>премиум класса</span>
 						</div>
 						<div class="obj obj_4">
 							<div class="element_img elment_img_4"></div>
-							<div class="SubText SubText_4">
+							<span class="SubText SubText_4">
 								Межкомнатные<br>перегородки 
-							</div>
+							</span>
 						</div>
 						<div class="obj obj_1">
 							<div class="element_img elment_img_5"></div>
-							<div class="SubText SubText_1">Мебель для ванной</div>
+							<span class="SubText SubText_1">Мебель для ванной</span>
 						</div>
 						<div class="obj obj_2">
 							<div class="element_img elment_img_6"></div>
-							<div class="SubText SubText_2">Торговое и выставочное оборудование</div>
+							<span class="SubText SubText_2">Торговое и выставочное оборудование</span>
 						</div>
 						<div class="obj obj_3">
 							<div alt="" class="element_img elment_img_7"></div>
-							<div class="SubText SubText_3">Мебель для баров и <br> ресторанов</div>
+							<span class="SubText SubText_3">Мебель для баров и <br> ресторанов</span>
 						</div>
 						<div class="obj obj_4">
 							<div class="element_img elment_img_8"></div>
-							<div class="SubText SubText_4">
+							<span class="SubText SubText_4">
 								Офисная мебель
-							</div>
+							</span>
 						</div>		
 				</div>
 					
@@ -157,41 +158,24 @@
 		<div class="sreen_five_mobile" id="sreen_five_mobile">
 			<div class="five_title">КОЛЛЕКЦИИ НАШИХ РАБОТ </div>
 				<div class='jobs_slider'>
-					<div>
 						<div>
 							<img src="img/Rectangle 34.png" alt="" class="Oline_img">
 						</div>
-					</div>
-					<div>
 						<div>
 							<img src="img/Rectangle 29.png" alt="" class="Oline_img">
 						</div>
-						
-					</div>
-					<div>
 						<div>
 							<img src="img/Rectangle 35.png" alt="" class="Oline_img">
 						</div>
-						
-					</div>
-					<div>
 						<div>
 							<img src="img/Rectangle 36.png" alt="" class="Oline_img">
 						</div>
-						
-					</div>
-					<div>
 						<div>
 							<img src="img/Rectangle 37.png" alt="" class="Oline_img">
 						</div>
-						
-					</div>
-					<div>
 						<div>
 							<img src="img/шк4.jpg" alt="" class="Oline_img">
 						</div>
-						
-					</div>
 				</div>
 				<div class=" btn_five button button_color "><a href="#nine" @click='showWind()'>Оформить заказ</a></div>
 		</div>

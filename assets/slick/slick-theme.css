@@ -27,9 +27,6 @@
   padding: 0 260px;
 } */
 
-.slader .slick-slide{
-  padding: 0 0 !important;
-}
 
 
 
@@ -110,8 +107,8 @@
 /* Точки (булиты) */ 
 .slader .slick-dots {
   bottom: 50px;
-  left: 40%;
-  
+  left: 50%;
+  transform: translateX(-50%);
 } 
 
 

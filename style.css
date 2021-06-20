@@ -56,22 +56,39 @@ header{
 	width: 1.18%;
 	height: 247px;
 	right: 62px;
-	top: 10px;
-	display: none;
-	border: 1px solid red;
+	top: 50%;
+	transform: translate(0, -50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	z-index: 1000;
 }
 
 .navFixed div{
 	width: 16px;
 	height: 16px;
 	border-radius: 50%;
-	background-color: transparent;
-	border: 2px solid  rgba(18, 25, 44, 1);
+	background-color: rgb(235, 235, 235);
+	border: 3px solid  rgba(18, 25, 44, 1);
+
 	
 }
 
 .navFixed_active{
-	background-color: #12192C;
+	background-color: #12192C !important;
+}
+
+
+
+.scroll{
+	width: 100px;
+	height: 100px;
+	position: fixed;
+	left: 30px;
+	top: 30px;
+	background-color: #000;
+	color: #fff;
+	z-index: 4;
 }
 
 
@@ -159,6 +176,14 @@ header{
 .header__text{
 	font-size: 2.25em;
 }
+.slader .slick-slide{
+	padding: 0 0 !important;
+  }
+
+.slader .slick-slide.slick-current{
+	width: 300px !important;
+}
+  
 
 .button {
 	font-size: 18px;
@@ -190,7 +215,7 @@ header{
 
 
 .button_color{
-	background-color: rgba(248, 203, 23, 1);
+	background-color: rgb(136, 109, 0);
 }
 
 .btn_five{
@@ -438,13 +463,13 @@ nav{
 	width: 175px;
 	height: 151px;
 	background: url(img/subj/shkaf.png) center no-repeat;
-	margin-left: 11px;
+
 }
 .elment_img_1:hover{
 	width: 175px;
 	height: 151px;
 	background: url(img/subj/Mask_Group.png) center no-repeat;
-	margin-left: 11px;
+
 }
 .elment_img_2{
 	width: 251px;
@@ -460,7 +485,7 @@ nav{
 	width: 140px;
 	height: 150.53px;
 	background: url(img/subj/kitchen.png)center  no-repeat;
-	margin-left: 20px;
+
 }
 .elment_img_3:hover{
 	width: 140px;
@@ -1055,6 +1080,7 @@ input{
 	height: 800px;
 	background-color: rgba(18, 25, 44, 1);
 	padding-top: 9.6%;
+	z-index: 10;
 }
 
 .ten_items{
@@ -1063,6 +1089,10 @@ input{
 	margin-top: 10%;
 	position: relative;
 
+}
+
+.slader .slick-slide{
+	padding: 0 0 !important;
 }
 
 .map{
@@ -1156,6 +1186,12 @@ footer{
 		bottom: 2px;
 	}
 
+	.subject .slick-slide{
+		display: flex;
+	align-items: center;
+	flex-direction: column;
+	}
+
 	.mobilNav_activ{
 		left: 0 !important;
 	}
@@ -1183,12 +1219,16 @@ footer{
 		filter: blur(3px);
 	}
 	.obj{
-		width: 450px !important;
+		width: 390px !important;
 	
 	}
 
 	.obj div:first-child {
-		background-size: 100px auto !important;
+		background-size: 100px auto;
+	}
+
+	.elment_img_2{
+		background-size: 140px auto !important;
 	}
 
 	.three_tittle{
@@ -1322,11 +1362,17 @@ footer{
 		opacity: 0;
 		top: 25px;
 		z-index: 4;
-	
+	}
+
+	.navFixed{
+		display: none;
 	}
 
 	.five_title{
 		font-size: 2.25em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.exit_active{
@@ -1409,10 +1455,6 @@ footer{
 	}
 
 	
-.slick-slide.slick-active{
-	margin-right: 20px;
-	margin-left: 20px;
-}
 
 	.main_text{
 		margin: 0 auto;
@@ -1532,7 +1574,21 @@ footer{
 	.sreen_five_mobile{
 		display: block;
 		background-color:  rgba(255, 200, 2, 0.118);
-		;
+		height: 600px;
+		display: grid !important;	
+	}
+
+	.jobs_slider .slick-dots{
+		transform: translateX(-60%);
+		left: 50%;
+	}
+
+	.jobs_slider .slick-arrow{
+		display: none !important;
+	}
+
+	.jobs_slider {
+		align-self: center;
 	}
 
 	
@@ -1550,12 +1606,16 @@ footer{
 		white-space: normal;
 		padding-left: 10px;
 	}
+	.btn_five{
+		top: 0;
+	}
 
 	.btn_ten{
 		left: 50%;
 		bottom: -140px;
 		transform: translate(-50%, 0);
 	}
+
 
 	.map{
 		margin-left: 0;
@@ -1568,6 +1628,18 @@ footer{
 		opacity: 1 !important;
 		transition: all 2s;
 	}
+
+	.Oline_img {
+		max-width: none !important;
+		margin-left: 0 !important;
+		margin-bottom: 0 !important;
+		width: 100% !important;
+	}
+
+	.slader .slick-dots {
+		left: none;
+		transform: translateX(0%) !important;
+	  } 
 	
 
 

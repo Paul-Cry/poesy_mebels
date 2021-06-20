@@ -2,15 +2,29 @@ let action = function(number){
 	window.scrollTo(0, number)
 }
 
+let hiddenBody = ()=>{
+	document.body.style = 'overflow: hidden !important; '
+}
+
+let showBody = ()=>{
+	document.body.style = 'overflow-x: hidden !important; '
+}
+
+let opacity = 'opacity: 1 !important'
+
+let showWindJs = ()=>{
+	app.wind = opacity
+}
+
 let counter = 0
 
 window.onscroll = () => {
 	if(window.innerWidth >= 800){
-		app.hide = 'opacity: 0;'
+	
 	
 		let scrol = window.pageYOffset;
 		console.log(scrol)
-		let opacity = 'opacity: 1 !important'
+		
 		//Таймер 
 		let sleep = (ms)=>{
 				return new Promise((resolve) =>{
@@ -40,7 +54,7 @@ window.onscroll = () => {
 			}
 		}
 		if(scrol >= 2158.96655273437 ){
-			app.four_items = 'animation: four_items 2s ease forwards;'
+			app.four_items = 'animation: four_items 2s ease forwards; opacity: 1 !important;' 
 			setTimeout(four_text, 2000)
 		}
 		if(scrol >= 4287){
@@ -61,18 +75,12 @@ window.onscroll = () => {
 		if(scrol >= 6512){
 			app.wind = opacity
 		}
+
 	}
 }
 
 
 
-
-// let burger = document.querySelectorAll('.mobilNav')
-
-// burger[0].addEventListener('click', ()=>{
-// 	app.burger = true;
-// 	console.log(223443)
-// })
 
 
 
@@ -135,18 +143,79 @@ const app = new Vue({
 		},
 		cons(){
 			app.burger = true
+			hiddenBody()
 			setTimeout(()=>{
 				this.exit = true
-			}, 1200)
+			},500)
 		},
 		exitPass(){
 			this.burger = null
 			this.exit = null
+			showBody()
+		
+		},
+		showWind(){
+			showWindJs()
 		}
 	}
 })
 
 console.log(234)
+
+
+// if(window.innerWidth >= 800){
+	$('.subject').slick({
+		infinite: true,
+		slidesToShow: 2,
+		slidesToScroll: 2,
+		dots: true,
+		rows: 2,
+		responsive: [
+			{
+				breakpoint: 437,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+					dots: true,
+					rows: 2,
+					centerPadding: '140px',
+				}
+			}
+		]
+	});
+// }
+
+
+
+$('.jobs_slider').slick({
+	infinite: true,
+	centerMode: true,
+    slidesToShow: 1,
+	slidesToScroll: 1,
+	dots: true,
+
+});
+
+$('.slader').slick({
+	infinite: true,
+	
+	  slidesToShow: 3,
+	  slidesToScroll: 2,
+	  dots: true,
+	  responsive: [
+		{
+			breakpoint: 437,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				centerPadding: '90px',
+			}
+		}
+	]
+});
+
+
+
 
 
 
@@ -155,19 +224,26 @@ $('.subject').slick({
     slidesToShow: 2,
 	slidesToScroll: 2,
 	dots: true,
-    rows: 2
+    rows: 2,
+	responsive: [
+		{
+			breakpoint: 437,
+			settings: {
+				rows: 1,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+			}
+		}
+	]
 });
 
 
 
 
-$('.slader').slick({
-	infinite: true,
-	centerMode: true,
-	  slidesToShow: 3,
-	  slidesToScroll: 2,
-	  dots: true,
-});
+
+
+
+
 
 
 

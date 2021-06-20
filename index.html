@@ -11,7 +11,7 @@
 <title>poesy_mebels</title>
 </head>
 <body>
-	<div id="app">
+	<div id="app" :class='{"body_hidden": burger}'>
 		<header id='main'>
 			<div class="burger" @click="cons()">
 				<div></div>
@@ -20,29 +20,29 @@
 			</div>
 			<div class="mobilNav" :class='{"mobilNav_activ": burger}'>
 				<div class="nav_text" ><a href="#sreen_five">Главная</a></div>
-				<div class="nav_text" @click='changeWind(900)'><a >О нас</a></div> 
-				<div class="nav_text" @click='changeWind(1567)'><a >Виды работы</a></div>
-				<div class="nav_text" @click='changeWind(0)'><a >Галлерея</a></div>
-				<div class="nav_text" @click='changeWind(8160)'><a>Контакты</a></div>
+				<div class="nav_text" @click='changeWind(900)'><a href="#screen_two" @click='exitPass()' >О нас</a></div> 
+				<div class="nav_text" @click='changeWind(1567)'><a href="#screen_three" @click='exitPass()' >Виды работы</a></div>
+				<div class="nav_text" @click='changeWind(0)'><a href="#sreen_five_mobile" @click='exitPass()' >Галлерея</a></div>
+				<div class="nav_text" @click='changeWind(8160)'><a href="#ten" @click='exitPass()' >Контакты</a></div>
 				<div class="exit" :class='{"exit_active": exit}' @click='exitPass()'>
 					<div :class='{"exit1": exit}'></div>
 					<div :class='{"exit2": exit}'></div>
 				</div>
 			</div>
-			<div class="header_bagk headers_items">
+			<div class="header_bagk headers_items" :class='{"headers_items_acitive": burger}'>
 				<img src="img/logo.png" alt="" class="header_logo"  @click='cons()'>
 				<div class="container headers_postion">
 					<div class="heder_blockText">
 						<div class="header__title" >Изготовление мебели</div>
 						<div class="header__text">По индивидуальному заказу в сургуте</div>
 					</div>
-					<div class="button btn_header" style="margin-top: 136px;"><a href="#">Оформить заказ</a></div>
+					<div class="button btn_header" style="margin-top: 136px;"><a href="#nine" @click='showWind()'>Оформить заказ</a></div>
 				</div>
 			</div>
 			<nav> 
 				<div class="container">
 					<div class="nav_positon">
-						<div class="nav_text" ><a href="#sreen_five">Главная</a></div>
+						<div class="nav_text" ><a href="#">Главная</a></div>
 						<div class="nav_text" @click='changeWind(900)'><a >О нас</a></div> 
 						<div class="nav_text" @click='changeWind(1567)'><a >Виды работы</a></div>
 						<div class="nav_text" @click='changeWind(0)'><a >Галлерея</a></div>
@@ -52,7 +52,20 @@
 				</div>
 			</nav>
 		</header>
-		<div class="screen_two items" id="screen_two">
+		<div class="navFixed">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		
+		<div class="screen_two items" id="screen_two" :class='{"headers_items_acitive": burger}'>
 			<div class="container " :style="hide">
 				<div class="two_mainText">
 					<div class="main_title">Добро пожаловать  на наш сайт</div>
@@ -139,10 +152,53 @@
 					<img src="img/шк4.jpg" alt="" class="Oline_img">
 				</div>
 			</div>
-			<div class=" btn_five button button_color "><a href="#">Оформить заказ</a></div>
+			<div class=" btn_five button button_color "><a href="#nine" @click='showWind()'>Оформить заказ</a></div>
 		</div>
-		<div class="sex_wind">
-			<p class="sex_wind_title">Наши поставщики</p>
+		<div class="sreen_five_mobile" id="sreen_five_mobile">
+			<div class="five_title">КОЛЛЕКЦИИ НАШИХ РАБОТ </div>
+				<div class='jobs_slider'>
+					<div>
+						<div>
+							<img src="img/Rectangle 34.png" alt="" class="Oline_img">
+						</div>
+					</div>
+					<div>
+						<div>
+							<img src="img/Rectangle 29.png" alt="" class="Oline_img">
+						</div>
+						
+					</div>
+					<div>
+						<div>
+							<img src="img/Rectangle 35.png" alt="" class="Oline_img">
+						</div>
+						
+					</div>
+					<div>
+						<div>
+							<img src="img/Rectangle 36.png" alt="" class="Oline_img">
+						</div>
+						
+					</div>
+					<div>
+						<div>
+							<img src="img/Rectangle 37.png" alt="" class="Oline_img">
+						</div>
+						
+					</div>
+					<div>
+						<div>
+							<img src="img/шк4.jpg" alt="" class="Oline_img">
+						</div>
+						
+					</div>
+				</div>
+				<div class=" btn_five button button_color "><a href="#nine" @click='showWind()'>Оформить заказ</a></div>
+		</div>
+		
+		
+		<div class="six_wind">
+			<p class="six_wind_title">Наши поставщики</p>
 
 			<!-- 	<img src="img/Лево.png" alt="" class="arrows left "> -->
 			<div class="slader">  
@@ -164,7 +220,7 @@
 				<p class="seven_text seven_items2 ot" >Рассрочка 3 месяца <br>
 					<span style="font-family: 'Rubik-medium'">БЕЗ УЧАСТИЯ БАНКА</span>
 				</p>
-				<div class=" btn_seven button button_color "><a href="#">Оформить заказ</a></div>
+				<div class=" btn_seven button button_color "><a href="#nine" @click='showWind()'>Оформить заказ</a></div>
 			</div>
 		</div>
 		<div class="eight">
@@ -184,8 +240,8 @@
 			</div>
 		</div>
 		
-		<div class="nine">
-			<div class="nine_wind wind" :style='wind'>
+		<div class="nine" >
+			<div class="nine_wind wind" :style='wind' id='nine'>
 				<div class='nine_title' style="font-family: 'Rubik-medium'">Оформите заявку</div>
 				<span class="seven_text nine_items1"  id='123'>На бесплатную констультацию <br>
 				и выезд замерщика</span>
@@ -197,10 +253,10 @@
 					<input type="tel" class='input tel' placeholder="Телефон">
 					<textarea name="" id="" cols="30" rows="10" class='input' placeholder="Сообщение"></textarea>
 				</div>
-				<div class=" btn_nine button button_color "><a href="#">Оформить заказ</a></div>
+				<div class=" btn_nine button button_color "><a href="#nine" @click='showWind()'>Оформить заказ</a></div>
 			</div>
-		</div>
-		<div class="ten">
+		</div>	
+		<div class="ten" id='ten'>
 			<div class="container">
 				<div class="title titel_ten">Контакты</div>
 				<div class="ten_items">
@@ -215,13 +271,18 @@
 				</div>
 			</div>
 		</div>
+	
+	
+
 		<footer>
 			<img src="img/Mask Group.png" alt="" class='footer_img'>
 			<span class='footer_text'>Изготовление  мебели по <br>
 			Индивидуальному заказу в г.Сургуте</span>
 		</footer>
-	</div>	
+
+	</div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
 

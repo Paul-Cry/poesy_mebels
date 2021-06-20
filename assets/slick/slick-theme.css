@@ -23,6 +23,16 @@
   padding: 0 60px;
 } 
 
+/* .jobs_slider .slick-slide{
+  padding: 0 260px;
+} */
+
+.slader .slick-slide{
+  padding: 0 0 !important;
+}
+
+
+
 /* Слайд активный (показывается) */ 
 .slick-slide.slick-active{} 
 
@@ -52,9 +62,13 @@
   text-align: center;
   margin: 0 auto;
   overflow-x: hidden !important;
-  padding: 0px 80px !important;
+  padding: 0px 80px ;
 
 }
+
+/* .slader .slick-slide{
+  margin-left: 150px !important;
+} */
 
 .provider_img{
   margin: 0 auto;

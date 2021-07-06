@@ -1,7 +1,3 @@
-let action = function(number){
-	window.scrollTo(0, number)
-}
-
 let hiddenBody = ()=>{
 	document.body.style = 'overflow: hidden !important; '
 }
@@ -16,26 +12,20 @@ let showWindJs = ()=>{
 	app.wind = opacity
 }
 
-let counter = 0
+let counter = 0;
+//Таймер 
+let sleep = (ms)=>{
+	return new Promise((resolve) =>{
+		setTimeout(()=>{
+			resolve()
+		}, ms)
+	})}
+
 
 window.onscroll = () => {
-	if(window.innerWidth >= 800){
-	
-	
-		let scrol = window.pageYOffset;
+	let scrol = window.pageYOffset;
 		// console.log(scrol)
 		app.numberScroll = scrol
-		app.navAcive(scrol)
-		
-		//Таймер 
-		let sleep = (ms)=>{
-				return new Promise((resolve) =>{
-					setTimeout(()=>{
-						resolve()
-					}, ms)
-			})
-	}
-	
 		let offMove = function(){
 			
 			app.threeAnimation = false;
@@ -44,25 +34,50 @@ window.onscroll = () => {
 			app.fourText = 'animation: round_items 1s ease-out forwards;'
 		}
 		app.number = scrol;
-		if(  scrol >= 408){
+		if(window.innerWidth > 1024){
+			if(  scrol >= app.positionPage[1]/2){
+				app.hide = opacity;
+			} 
+			if(scrol >= app.positionPage[2]/1.3 && counter == 0){
+				counter++
+				app.screen_three = true;
+				app.threeAnimation = true;
+				if(counter > 0){
+					setTimeout(offMove, 1000)
+				}
+			}
+			if(scrol >= app.positionPage[3]/1.2 ){
+				app.four_items = 'animation: four_items 2s ease forwards; opacity: 1 !important;' 
+				setTimeout(four_text, 2000)
+			}
+			if(scrol >= app.positionPage[5]/1.04){
+				app.seven_screen = 'animation: wind 2s ease forwards;'
+			}
+			if(scrol >= app.positionPage[7]/1.059){
+				app.eth_text = opacity
+				sleep(1000).then(()=>{
+					app.pencil = true
+				})
+				sleep(2000).then(()=>{
+					app.eight1 = 'animation: eightOne 1s  forwards; opacity: 1 !important;'
+				})
+				sleep(3000).then(()=>{
+					app.eight2 = 'animation: eightOne 1s  forwards; opacity: 1 !important;'
+				})
+			}
+			if(scrol >= app.positionPage[8]/1.025){
+				app.wind = opacity
+			}
+		}else{
 			app.hide = opacity;
-		} 
-		if(scrol >= 1377 && counter == 0){
-			counter++
-			app.screen_three = true;
+			// app.screen_three = false;
 			app.threeAnimation = true;
 			if(counter > 0){
 				setTimeout(offMove, 1000)
 			}
-		}
-		if(scrol >= 2158.96655273437 ){
-			app.four_items = 'animation: four_items 2s ease forwards; opacity: 1 !important;' 
-			setTimeout(four_text, 2000)
-		}
-		if(scrol >= 4287){
+			
+			
 			app.seven_screen = 'animation: wind 2s ease forwards;'
-		}
-		if(scrol >= 5492){
 			app.eth_text = opacity
 			sleep(1000).then(()=>{
 				app.pencil = true
@@ -73,25 +88,87 @@ window.onscroll = () => {
 			sleep(3000).then(()=>{
 				app.eight2 = 'animation: eightOne 1s  forwards; opacity: 1 !important;'
 			})
-		}
-		if(scrol >= 6512){
 			app.wind = opacity
 		}
+}
+		
+	
 
+
+	let activateGallery = () =>{
+		$('.gallery').slick({
+			infinite: true,
+			centerMode: true,
+			speed: 500,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			fade: true,
+			cssEase: 'linear'
+		  });
+	}
+
+
+
+
+
+
+	
+
+
+var componentA =  {
+	name: 'component-a',
+	data: function(){
+		return {
+			popupGall: false,
+			popupExit: false,
+		}
+	},
+	template: `
+	<div class="popup" v-if='popupGall'>
+			<div class="block__exit">
+				<div class="popup__exit" :class='{"showExit": popupExit}'  @click='showPopuExit()' >
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			
+			<div class="gallery">
+				<div class="gallery__block"><img src="./img/ourWork/IMG__2897.JPG.jpg" alt=""></div>
+				<div class="gallery__block"><img src="./img/ourWork/image (18).jpg" alt=""></div>
+				<div class="gallery__block"><img src="./img/ourWork/IMG_20100101_053224.jpg" alt=""></div>
+				<div class="gallery__block"><img src="./img/ourWork/IMG_20100101_053307.jpg" alt=""></div>
+				<div class="gallery__block"><img src="./img/ourWork/IMG_20170118_194611.jpg" alt=""></div>
+				<div class="gallery__block"><img src="./img/ourWork/IMG__2841.JPG.jpg" alt=""></div>
+				<div class="gallery__block"><img src="./img/ourWork/garderobnye5.jpg" alt=""></div>
+				<div class="gallery__block"><img src="./img/ourWork/шк4.jpg" alt=""></div>
+			</div>
+		</div>
+	`,
+	methods: {
+		showPopuExit(flag){
+			console.log(flag)
+			if(flag){
+				this.popupGall = true;
+				document.body.style = 'overflow: hidden !important;'
+				setTimeout(()=>{
+					activateGallery()
+					document.querySelector('.gallery').style.opacity = 1;
+				}, 10)
+			}else{
+				this.popupGall = false;
+				document.body.style = 'overflow: visible!important;'
+				setTimeout(()=>{
+					activateGallery()
+					document.querySelector('.gallery').style.opacity = 0;
+				}, 10)
+			}
+			
+			
+		}
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-const app = new Vue({
+var app = new Vue({
 	el: '#app',
 	data: {
 		numberScroll: '',
@@ -111,20 +188,68 @@ const app = new Vue({
 		eight2:'',
 		wind: '',
 		exit: null,
-		navButton: [],
+		navButton: "1",
 		object: [
 			"img/subj/shkaf.png"
 		],
-		burger: null
+		picture: document.getElementsByClassName('picture'),
+		burger: null,
+		pages: document.getElementsByClassName('screen'),
+		positionPage: [],
+		screel: window.scrollY
 	},
+	components:{
+        'component-a': componentA
+    },
 	mounted(){
-		this.navButton[0] = true;
+		// Создаётся массив с координатами каждого окна 
+		for( let element of this.pages){
+			let y = element.getBoundingClientRect().top + window.scrollY;
+			this.positionPage.push(y);
+		}
+		this.positionPage.push('40000')
+		
+	},
+	created () {
+		window.addEventListener('scroll', this.onScroll);	
 	},
 	
 	methods: {
-		changeWind(number){
-			action(number);
-			console.log(23);
+		smoothScrollTo(endX, endY, duration) {
+			let startX = window.scrollX || window.pageXOffset,
+				startY = window.scrollY || window.pageYOffset,
+				distanceX = endX - startX,
+				distanceY = endY - startY,
+				startTime = new Date().getTime();
+			let easeInOutQuart = function(time, from, distance, duration) {
+			  if ((time /= duration / 2) < 1) return distance / 2 * time * time * time * time + from;
+			  return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
+			};
+			let timer = window.setInterval(function() {
+			  let time = new Date().getTime() - startTime,
+				  newX = easeInOutQuart(time, startX, distanceX, duration),
+				  newY = easeInOutQuart(time, startY, distanceY, duration);
+			  if (time >= duration) {
+				window.clearInterval(timer);
+			  }
+			  window.scrollTo(newX, newY);
+			}, 1000 / 60);
+		  },
+
+		changeWind(pages){
+			let pagesNumber = Number(pages) -1
+			let scrollYW = this.positionPage[pagesNumber] + 50;
+			this.navButton = pages;
+			this.smoothScrollTo(0, scrollYW, 1000)
+			
+		},
+		onScroll(){
+			this.positionPage.forEach( (element, i)=>{
+				if(window.scrollY > element && window.scrollY <  this.positionPage[i+1]){
+					this.navButton = i+1;
+				}
+			})
+			
 		},
 		change_chek(option){
 			if(option == 'left'){
@@ -134,20 +259,6 @@ const app = new Vue({
 				this.check= true;
 				this.check_click = true;
 			}
-			
-		},
-		changeBackground(number){
-			switch (number){
-				case 0:
-					this.object[0] = "img/subj/Mask_Group.png"
-					alert(2345)
-					
-					break;
-				case 1:
-					console.log('asd')
-					break;
-			}
-			return this.object
 		},
 		cons(){
 			app.burger = true
@@ -175,30 +286,6 @@ const app = new Vue({
 					app.navButton[i] = false 
 				}
 			}
-		},
-		navAcive(number){
-				if(number >= 0 && number <= 864){
-					this.serchNav(0)
-				}else if(number >= 864 && number <=1767.6){
-					this.serchNav(1)
-				}else if(number >= 1767.6 && number <= 2551){
-					this.serchNav(2)
-				}else if(number >= 2551 && number <= 3264){
-					this.serchNav(3)
-				}else if(number >= 3260 && number <= 4266){
-					this.serchNav(4)
-				}else if(number >= 4266 && number <= 4711.25 ){
-					this.serchNav(5)
-				}else if(number >= 4711 && number <= 5626 ){
-					this.serchNav(6)
-				}else if(number >= 5627 && number <= 6491.25 ){
-					this.serchNav(7)
-				}else if(number >= 6491 && number <= 7406 ){
-					this.serchNav(8)
-				}else if(number >= 7406 && number <= 7852 ){
-					this.serchNav(9)
-				}			
-
 		}
 	}
 })
@@ -208,7 +295,11 @@ const app = new Vue({
 
 
 
-// if(window.innerWidth >= 800){
+
+
+
+
+var sliderSubject = ()=> {
 	$('.subject').slick({
 		infinite: true,
 		slidesToShow: 2,
@@ -229,18 +320,31 @@ const app = new Vue({
 			}
 		]
 	});
-// }
+}
+
+$(window).on('load', function() {
+	app.screen_three = true;
+	sleep(1000).then(()=>{
+		sliderSubject()
+		sleep(500).then(()=>{
+			$('.subject').slick('refresh');
+		})
+	})
+})
+
+
+	
 
 
 
 $('.jobs_slider').slick({
     dots: true,
-	
     infinite: true,
     speed: 300,
     slidesToShow: 1,
     adaptiveHeight: true
 });
+
 
 $('.slader').slick({
 	  infinite: true,
@@ -255,33 +359,38 @@ $('.slader').slick({
 				slidesToScroll: 1,
 				
 			}
-		}
-	]
-});
-
-
-
-
-
-
-$('.subject').slick({
-	infinite: true,
-	centerMode: true,
-    slidesToShow: 2,
-	slidesToScroll: 2,
-	dots: true,
-    rows: 2,
-	responsive: [
-		{
-			breakpoint: 437,
+		},{
+			breakpoint: 850,
 			settings: {
-				rows: 1,
-				slidesToShow: 1,
-				slidesToScroll: 1,
+				slidesToShow: 2,
 			}
 		}
 	]
 });
+
+
+
+// $('.subject').slick({
+// 	infinite: true,
+// 	centerMode: true,
+//     slidesToShow: 2,
+// 	slidesToScroll: 2,
+// 	dots: true,
+//     rows: 2,
+// 	responsive: [
+// 		{
+// 			breakpoint: 437,
+// 			settings: {
+// 				rows: 1,
+// 				slidesToShow: 1,
+// 				slidesToScroll: 1,
+// 			}
+// 		}
+// 	]
+// });
+
+
+
 
 
 

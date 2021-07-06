@@ -12,19 +12,18 @@
 </head>
 <body>
 	<div id="app" :class='{"body_hidden": burger}'>
-
-		<header id='main'>
+		<header id='main' class='screen'>
 			<div class="burger" @click="cons()">
 				<div></div>
 				<div></div>
 				<div></div>
 			</div>
 			<div class="mobilNav" :class='{"mobilNav_activ": burger}'>
-				<div class="nav_text" ><a href="#sreen_five">Главная</a></div>
-				<div class="nav_text" @click='changeWind(900)'><a href="#screen_two" @click='exitPass()' >О нас</a></div> 
-				<div class="nav_text" @click='changeWind(1567)'><a href="#screen_three" @click='exitPass()' >Виды работы</a></div>
-				<div class="nav_text" @click='changeWind(0)'><a href="#sreen_five_mobile" @click='exitPass()' >Галерея</a></div>
-				<div class="nav_text" @click='changeWind(8160)'><a href="#ten" @click='exitPass()' >Контакты</a></div>
+				<div class="nav_text" ><a href="#main">Главная</a></div>
+				<div class="nav_text" ><a href="#screen_two" @click='exitPass()' >О нас</a></div> 
+				<div class="nav_text" ><a href="#screen_three" @click='exitPass()' >Виды работы</a></div>
+				<div class="nav_text" ><a href="#sreen_five_mobile" @click='exitPass()' >Галерея</a></div>
+				<div class="nav_text" ><a href="#ten" @click='exitPass()' >Контакты</a></div>
 				<div class="exit" :class='{"exit_active": exit}' @click='exitPass()'>
 					<div :class='{"exit1": exit}'></div>
 					<div :class='{"exit2": exit}'></div>
@@ -43,30 +42,30 @@
 			<nav> 
 				<div class="container">
 					<div class="nav_positon">
-						<div class="nav_text" ><a href="#">Главная</a></div>
-						<div class="nav_text" @click='changeWind(900)'><a >О нас</a></div> 
-						<div class="nav_text" @click='changeWind(1567)'><a >Виды работы</a></div>
-						<div class="nav_text" @click='changeWind(0)'><a >Галерея</a></div>
-						<div class="nav_text" @click='changeWind(8160)'><a>Контакты</a></div>
+						<div class="nav_text" ><a href="#main">Главная</a></div>
+						<div class="nav_text"><a href="#screen_two">О нас</a></div> 
+						<div class="nav_text" ><a  href="#screen_three">Виды работы</a></div>
+						<div class="nav_text"><a href="#sreen_five">Галерея</a></div>
+						<div class="nav_text" ><a href="#ten">Контакты</a></div>
 					</div>	
 
 				</div>
 			</nav>
 		</header>
 		<div class="navFixed">
-			<div :class='{"navFixed_active": navButton[0]}' @click='changeWind(0)' ></div>
-			<div :class='{"navFixed_active": navButton[1]}' @click='changeWind( 865)' ></div>
-			<div :class='{"navFixed_active": navButton[2]}' @click='changeWind(1769)' ></div>
-			<div :class='{"navFixed_active": navButton[3]}' @click='changeWind(2552)' ></div>
-			<div :class='{"navFixed_active": navButton[4]}' @click='changeWind(3298 )' ></div>
-			<div :class='{"navFixed_active": navButton[5]}' @click='changeWind(4268)' ></div>
-			<div :class='{"navFixed_active": navButton[6]}' @click='changeWind(4712)' ></div>
-			<div :class='{"navFixed_active": navButton[7]}' @click='changeWind(5628)' ></div>
-			<div :class='{"navFixed_active": navButton[8]}' @click='changeWind(6493)' ></div>
-			<div :class='{"navFixed_active": navButton[9]}' @click='changeWind(7408)' ></div>
+			<div :class='{"navFixed_active": navButton == "1"}' @click='changeWind(1)' ></div>
+			<div :class='{"navFixed_active": navButton == "2"}' @click='changeWind(2)' ></div>
+			<div :class='{"navFixed_active": navButton == "3"}' @click='changeWind(3)' ></div>
+			<div :class='{"navFixed_active": navButton == "4"}' @click='changeWind(4)' ></div>
+			<div :class='{"navFixed_active": navButton == "5"}' @click='changeWind(5)' ></div>
+			<div :class='{"navFixed_active": navButton == "6"}' @click='changeWind(6)' ></div>
+			<div :class='{"navFixed_active": navButton == "7"}' @click='changeWind(7)' ></div>
+			<div :class='{"navFixed_active": navButton == "8"}' @click='changeWind(8)' ></div>
+			<div :class='{"navFixed_active": navButton == "9"}' @click='changeWind(9)' ></div>
+			<div :class='{"navFixed_active": navButton == "10"}' @click='changeWind(10)' ></div>
 		</div>
 		
-		<div class="screen_two items" id="screen_two" :class='{"headers_items_acitive": burger}'>
+		<div class="screen_two items screen" id="screen_two" :class='{"headers_items_acitive": burger}'>
 			<div class="container " :style="hide">
 				<div class="two_mainText">
 					<div class="main_title">Добро пожаловать  на наш сайт</div>
@@ -82,9 +81,9 @@
 
 			</div>
 		</div>
-		<div class="screen_three" id="screen_three"> 
+		<div class="screen_three screen" id="screen_three"> 
 
-			<div class="container" id='subject'>
+			<div class="container" id='subject' v-if='screen_three'>
 				<div class="three_tittle" :class="{'hide' : !screen_three, 'show': screen_three}">Что мы можем</div>
 				<div class="subject"  :class="{'move_subject' :  threeAnimation}" v-if='check' key="subjectOne">
 						<div class="obj obj_1">
@@ -127,7 +126,7 @@
 					
 			</div>
 		</div>
-		<div class="screen_four">
+		<div class="screen_four screen">
 			<div class="four_items" :style='four_items'>	
 				<div class="items_schrank">
 					<img src='./img/shkaf2 1.png' alt="" alt="" class="schrank" >
@@ -135,27 +134,28 @@
 				<div class="round_items" :style='fourText'>
 					<div class="four_title">374</div>
 					<img src="./img/Group 1.png" alt="" class='round_linear'>
-					<div class="four_text">ГОТОВЫХ ИЗДЕЛИЙ ЗА <b>5 ЛЕТ</b> </div>
+					<div class="four_text"><pre>ГОТОВЫХ ИЗДЕЛИЙ ЗА <b>5 ЛЕТ</b> </pre></div>
 				</div>
 			</div>
 		</div>
-		<div class="sreen_five" id="sreen_five">
+		
+		<div class="sreen_five screen" id="sreen_five">
 			<div class="five_title">КОЛЛЕКЦИИ НАШИХ РАБОТ </div>
 			<div class="five_items">
 				<div class="Oline">
-					<img src="img/Rectangle 34.png" alt="" class="Oline_img">
-					<img src="img/Rectangle 29.png" alt="" class="Oline_img">
-					<img src="img/Rectangle 35.png" alt="" class="Oline_img">
+					<div class="Oline_img picture" @click='showPopuExit(1)'></div>
+					<div class="Oline_img picture" @click='showPopuExit(1)'></div>
+					<div class="Oline_img picture" @click='showPopuExit(1)'></div>
 				</div>
 				<div class="Tline">
-					<img src="img/Rectangle 36.png" alt="" class="Oline_img">
-					<img src="img/Rectangle 37.png" alt="" class="Oline_img">
-					<img src="img/шк4.jpg" alt="" class="Oline_img">
+					<div class="Oline_img picture" @click='showPopuExit(1)'></div>
+					<div class="Oline_img picture" @click='showPopuExit(1)'></div>
+					<div class="Oline_img picture" @click='showPopuExit(1)'></div>
 				</div>
 			</div>
 			<div class=" btn_five button button_color "><a href="#nine" @click='showWind()'>Оформить заказ</a></div>
 		</div>
-		<div class="sreen_five_mobile" id="sreen_five_mobile">
+		<div class="sreen_five_mobile " id="sreen_five_mobile">
 			<div class="five_title">КОЛЛЕКЦИИ НАШИХ РАБОТ </div>
 				<div class='jobs_slider'>
 						<div>
@@ -177,11 +177,30 @@
 							<img src="img/шк4.jpg" alt="" class="Oline_img">
 						</div>
 				</div>
-				<div class=" btn_five button button_color "><a href="#nine" @click='showWind()'>Оформить заказ</a></div>
+				<div class=" btn_five button button_color"><a href="#nine" @click='showWind()'>Оформить заказ</a></div>
 		</div>
-		
-		
-		<div class="six_wind">
+		<!-- <div class="popup" v-if='popupGall'>
+			<div class="block__exit">
+				<div class="popup__exit" :class='{"showExit": popupExit}'  @click='showPopuExit()' >
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			
+			<div class="gallery">
+				<div class="gallery__block"><img src="./img/ourWork/IMG__2897.JPG.jpg" alt=""></div>
+				<div class="gallery__block"><img src="./img/ourWork/image (18).jpg" alt=""></div>
+				<div class="gallery__block"><img src="./img/ourWork/IMG_20100101_053224.jpg" alt=""></div>
+				<div class="gallery__block"><img src="./img/ourWork/IMG_20100101_053307.jpg" alt=""></div>
+				<div class="gallery__block"><img src="./img/ourWork/IMG_20170118_194611.jpg" alt=""></div>
+				<div class="gallery__block"><img src="./img/ourWork/IMG__2841.JPG.jpg" alt=""></div>
+				<div class="gallery__block"><img src="./img/ourWork/garderobnye5.jpg" alt=""></div>
+				<div class="gallery__block"><img src="./img/ourWork/шк4.jpg" alt=""></div>
+			</div>
+		</div> -->
+		<component-a></component-a>
+		<div class="screen"></div> 
+		<div class="six_wind ">
 			<p class="six_wind_title">Наши поставщики</p>
 
 			<!-- 	<img src="img/Лево.png" alt="" class="arrows left "> -->
@@ -196,7 +215,7 @@
 
 			<!-- 			<img src="img/Право.png" alt="" class="arrows right"> -->
 		</div>
-		<div class="seven" >
+		<div class="seven screen" >
 			<div class="seven_wind wind" :style="seven_screen">
 				<p class='seven_title' style="font-family: 'Rubik-medium'">10 <img src="img/skidka.png" alt="" class="skidka"> Скидка</p>
 				<p class="seven_text seven_items1" >ЗА ПОВТОРНОЕ ОБРАЩЕНИЕ</p>
@@ -207,7 +226,7 @@
 				<div class=" btn_seven button button_color "><a href="#nine" @click='showWind()'>Оформить заказ</a></div>
 			</div>
 		</div>
-		<div class="eight">
+		<div class="eight screen">
 			<div class="eight_title" :style="eth_text">Выезд на замер <br>
 			И дизайн проекта  бесплатно</div>
 			<div class="subtitle">
@@ -224,7 +243,7 @@
 			</div>
 		</div>
 		
-		<div class="nine" >
+		<div class="nine screen" >
 			<div class="nine_wind wind" :style='wind' id='nine'>
 				<div class='nine_title' style="font-family: 'Rubik-medium'">Оформите заявку</div>
 				<span class="seven_text nine_items1"  id='123'>На бесплатную констультацию <br>
@@ -239,8 +258,9 @@
 				</div>
 				<div class=" btn_nine button button_color "><a href="#nine" @click='showWind()'>Оформить заказ</a></div>
 			</div>
-		</div>	
-		<div class="ten" id='ten'>
+		</div>
+	</div>	
+		<div class="ten screen" id='ten'>
 			<div class="container">
 				<div class="title titel_ten">Контакты</div>
 				<div class="ten_items">
@@ -251,28 +271,22 @@
 						E-mail: rsit86@mail.ru
 						<div class=" btn_ten button "><a href="#" >Заказать мебель</a></div>
 					</span>
-					<div class='map' style="overflow:hidden;width: 521px;position: relative;"><iframe width="521" height="360" src="https://maps.google.com/maps?width=521&amp;height=360&amp;hl=en&amp;q=%D0%B3.%D0%A1%D1%83%D1%80%D0%B3%D1%83%D1%82%2C%20%D1%83%D0%BB.%2030-%D0%BB%D0%B5%D1%82%20%D0%9F%D0%BE%D0%B1%D0%B5%D0%B4%D1%8B%2051%2F4+(%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="https://embedgooglemaps.com/en/">embedgooglemaps EN</a> & <a href="https://youtubeembedcode.com">Embed youtube video</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><br />
+					<iframe  class='map' src="https://yandex.ru/map-widget/v1/?um=constructor%3A6ebf6831c82526bfa4f3f362a5ad59ae613813afde7e1ca93c53503651a3efa0&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
 				</div>
 			</div>
 		</div>
-	
-	
-
 		<footer>
 			<img src="img/Mask Group.png" alt="" class='footer_img'>
 			<span class='footer_text'>Изготовление  мебели по <br>
 			Индивидуальному заказу в г.Сургуте</span>
 		</footer>
-
 	</div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
 
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="assets/slick/slick.min.js"></script>
+<script type="text/javascript" src="./assets/slick/jquery.js"></script>
+<script type="text/javascript" src="./assets/slick/slick.min.js"></script>
 <script type="text/javascript" src="assets/index.js"></script>
 </body>
 </html>

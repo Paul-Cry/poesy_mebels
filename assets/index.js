@@ -24,7 +24,7 @@ let sleep = (ms)=>{
 
 window.onscroll = () => {
 	let scrol = window.pageYOffset;
-		// console.log(scrol)
+		
 		app.numberScroll = scrol
 		let offMove = function(){
 			
@@ -109,7 +109,8 @@ window.onscroll = () => {
 
 
 
-
+	
+	
 
 
 	
@@ -144,9 +145,29 @@ var componentA =  {
 			</div>
 		</div>
 	`,
+	mounted() {
+		document.addEventListener('galler-event', ()=>{
+			this.showPopuExit(1)
+		})
+
+		let openGallery = ()=>{
+			let opentGallery = new Event('galler-event')
+			document.dispatchEvent(opentGallery)
+		}
+		if(window.innerWidth <= 480){
+			document.querySelector('.four_items').style.display = 'none'
+		}else{
+			document.querySelector('.four_items_mobil').style.display = 'none'
+			}
+		let pictureComponent = document.getElementsByClassName('picture');
+		for(let element of pictureComponent){
+			element.addEventListener('click', ()=>{
+				openGallery()
+			})
+		}
+	},
 	methods: {
 		showPopuExit(flag){
-			console.log(flag)
 			if(flag){
 				this.popupGall = true;
 				document.body.style = 'overflow: hidden !important;'
@@ -159,7 +180,6 @@ var componentA =  {
 				document.body.style = 'overflow: visible!important;'
 				setTimeout(()=>{
 					activateGallery()
-					document.querySelector('.gallery').style.opacity = 0;
 				}, 10)
 			}
 			
@@ -167,6 +187,10 @@ var componentA =  {
 		}
 	}
 }
+
+
+
+
 
 var app = new Vue({
 	el: '#app',
@@ -189,6 +213,7 @@ var app = new Vue({
 		wind: '',
 		exit: null,
 		navButton: "1",
+		tegPopup: componentA,
 		object: [
 			"img/subj/shkaf.png"
 		],
@@ -278,7 +303,7 @@ var app = new Vue({
 		},
 		serchNav(number){
 			for(let i = 0; i<= 9; i++){
-				// console.log(number)
+				
 				
 				if(number == i){
 					app.navButton[i] = true

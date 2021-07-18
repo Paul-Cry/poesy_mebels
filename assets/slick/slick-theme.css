@@ -17,13 +17,18 @@
 
  /* Лента слайдов */ 
  .slick-track{
+   display: -webkit-box;
+   display: -ms-flexbox;
    display: flex;
    overflow-x: hidden;
-   align-items: center;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
  }
 
 /* Слайд */ 
 .slick-slide{
+  -webkit-transition: all 1s;
   transition: all 1s;
   padding: 0 60px;
 } 
@@ -59,7 +64,8 @@
 /* Стрелка */
 
 .slader .slick-arrow{
-  transform: translateY(-20px);
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
   z-index: 10000;
 }
 
@@ -67,8 +73,12 @@
 .slader{
 
   /* width: 95%; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   margin: 0 auto;
   overflow-x: hidden !important;
@@ -120,16 +130,21 @@
 .slader .slick-dots {
   bottom: 0;
   left: 49%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   padding-left: 20px;
 } 
 
 
 
 .slick-dots{
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
   position: absolute;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .slick-dots li{
